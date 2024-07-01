@@ -9,9 +9,9 @@ Easy to use and Simple Interface.
 5. Reminder at 6:30 pm to fill your daily expenses
    
 ## Libraries & Tools used
-Architecture used: MVC pattern
-State Management: GetX
-Database : Sqflite
+. Architecture used: MVC pattern
+. State Management: GetX
+. Database : Sqflite
 1. flutter_svg: ^2.0.10+1
 2. intl: 
 3. uuid:
