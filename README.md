@@ -17,9 +17,18 @@ Architecture used: MVC pattern
 ### Getting Started
 just do "flutter run"
 
+![Screenshot_1719869473](https://github.com/mahira13/Personal_Expense_Tracker/assets/73304467/f51bfbb7-8e41-4e19-9187-2990530da560)
 
-![s1](https://github.com/mahira13/Personal_Expense_Tracker/assets/73304467/c388c2fd-795f-4019-85ff-fbe7ada6b934)
 
+![Screenshot_1719869488](https://github.com/mahira13/Personal_Expense_Tracker/assets/73304467/0f697fb8-069a-4a78-a709-7bbee7d11244)
+
+![Screenshot_1719869498](https://github.com/mahira13/Personal_Expense_Tracker/assets/73304467/cda07afd-bf29-4d3d-9874-df6ebd500bd8)
+
+
+![Screenshot_1719869509](https://github.com/mahira13/Personal_Expense_Tracker/assets/73304467/4b0cdb9b-79e8-407c-b6e2-0615127a6bea)
+
+
+![Screenshot_1719869529](https://github.com/mahira13/Personal_Expense_Tracker/assets/73304467/72b0c6bd-16e5-460d-8b7c-d5b9cbb49f35)
 
 
 
