@@ -1,6 +1,8 @@
 # personal_expense_tracker
-A Flutter app to manage your daily expenses and keep track of them. Easy to use and Simple Interface.
+A Flutter app to manage your daily expenses and keep track of them. It shows a Weekly Bar Graph of the tracked Expenditures grouped by 3 categories: food, travel and misc. You can also delete/edit an added expenditure. It also reminds you to fill the daily expenses at 6:30 pm using flutter_local_notifications. 
+Easy to use and Simple Interface.
 ## Libraries & Tools used
+Architecture used: MVC pattern
 1. flutter_svg: ^2.0.10+1
 2. intl: 
 3. uuid:
