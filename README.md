@@ -10,6 +10,8 @@ Easy to use and Simple Interface.
    
 ## Libraries & Tools used
 Architecture used: MVC pattern
+State Management: GetX
+Database : Sqflite
 1. flutter_svg: ^2.0.10+1
 2. intl: 
 3. uuid:
