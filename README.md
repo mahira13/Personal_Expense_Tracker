@@ -16,11 +16,10 @@ Architecture used: MVC pattern
 11. fl_chart:
 ### Getting Started
 just do "flutter run"
-![Screenshot_1719869473](https://github.com/mahira13/Personal_Expense_Tracker/assets/73304467/a6f2f52f-7596-4c88-a531-275969e20066)
-![Screenshot_1719869488](https://github.com/mahira13/Personal_Expense_Tracker/assets/73304467/c71b6c86-e6b6-4bb6-90a3-68118b1f7adf)
-![Screenshot_1719869498](https://github.com/mahira13/Personal_Expense_Tracker/assets/73304467/4c00d1a6-3dd1-4ec9-98a7-3cc97a8b9dfa)
-![Screenshot_1719869516](https://github.com/mahira13/Personal_Expense_Tracker/assets/73304467/ce05d09c-98f8-4689-8299-7642c848f65a)
-![Screenshot_1719869509](https://github.com/mahira13/Personal_Expense_Tracker/assets/73304467/afa0c9e7-e462-475d-aed4-a611357fac3d)
+
+
+![s1](https://github.com/mahira13/Personal_Expense_Tracker/assets/73304467/303af584-9a48-49b5-96de-76196d000869)
+
 
 
 
