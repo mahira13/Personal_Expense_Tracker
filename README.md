@@ -18,7 +18,8 @@ Architecture used: MVC pattern
 just do "flutter run"
 
 
-![s1](https://github.com/mahira13/Personal_Expense_Tracker/assets/73304467/303af584-9a48-49b5-96de-76196d000869)
+![s1](https://github.com/mahira13/Personal_Expense_Tracker/assets/73304467/c388c2fd-795f-4019-85ff-fbe7ada6b934)
+
 
 
 
