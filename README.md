@@ -19,6 +19,8 @@ just do "flutter run"
 ![Screenshot_1719869473](https://github.com/mahira13/Personal_Expense_Tracker/assets/73304467/a6f2f52f-7596-4c88-a531-275969e20066)
 ![Screenshot_1719869488](https://github.com/mahira13/Personal_Expense_Tracker/assets/73304467/c71b6c86-e6b6-4bb6-90a3-68118b1f7adf)
 ![Screenshot_1719869498](https://github.com/mahira13/Personal_Expense_Tracker/assets/73304467/4c00d1a6-3dd1-4ec9-98a7-3cc97a8b9dfa)
-![Screenshot_1719869509](https://github.com/mahira13/Personal_Expense_Tracker/assets/73304467/703ea7d7-0b42-414d-8022-f33321ee![Screenshot_171![Screenshot_1719869529](https://github.com/mahira13/Personal_Expense_Tracker/assets/73304467/e803650d-508e-4089-bb31-92b802d0ee3b)
-9869516](https://github.com/mahira13/Personal_Expense_Tracker/assets/73304467/aae69634-9852-4f9e-a771-4cabb7cd7d8b)
-8694)
+![Screenshot_1719869516](https://github.com/mahira13/Personal_Expense_Tracker/assets/73304467/ce05d09c-98f8-4689-8299-7642c848f65a)
+
+![Screenshot_1719869498](https://github.com/mahira13/Personal_Expense_Tracker/assets/73304467/fd68ada3-627a-45eb-8b61-c0148abb1f1a)
+
+
