@@ -1,5 +1,7 @@
 import 'package:fl_chart/fl_chart.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 import 'package:personal_expense_tracker/models/expense_model.dart';
 import 'package:personal_expense_tracker/services/database_service.dart';
 
@@ -7,25 +9,27 @@ import '../utils/app_colors.dart';
 
 class HomeScreenController extends GetxController {
   var expenseList = List<Expense>.empty(growable: true).obs;
+  var expenseListMain = List<Expense>.empty(growable: true).obs;
   RxBool isLoading = false.obs;
+  var filterTitle = "All".obs;
 
   //for chart
-  var showingBarGroups=List<BarChartGroupData>.empty(growable: true).obs;
+  var showingBarGroups = List<BarChartGroupData>.empty(growable: true).obs;
   final double width = 7;
   List<double> expFood = List.generate(7, (index) => 0);
   List<double> expTravel = List.generate(7, (index) => 0);
   List<double> expMisc = List.generate(7, (index) => 0);
 
   initCategoryLists() {
-     if (expFood.isNotEmpty) {
+    if (expFood.isNotEmpty) {
       expFood.clear();
       expFood = List.generate(7, (index) => 0);
     }
-     if (expTravel.isNotEmpty) {
-     expTravel .clear();
+    if (expTravel.isNotEmpty) {
+      expTravel.clear();
       expTravel = List.generate(7, (index) => 0);
     }
-     if (expMisc.isNotEmpty) {
+    if (expMisc.isNotEmpty) {
       expMisc.clear();
       expMisc = List.generate(7, (index) => 0);
     }
@@ -90,11 +94,55 @@ class HomeScreenController extends GetxController {
     );
   }
 
+  Future<Null> selectDate(BuildContext context) async {
+    final today = DateTime.now();
+    final DateTime? pickedDate = await showDatePicker(
+        context: context,
+        initialDate: today,
+        firstDate: DateTime(1900, 1),
+        lastDate: today,
+        builder: (BuildContext? context, Widget? child) {
+          return Theme(
+            data: ThemeData.light().copyWith(
+              colorScheme: const ColorScheme.light(
+                primary: Color(0xffE84C28),
+              ),
+            ),
+            child: child!,
+          );
+        });
+    if (pickedDate != null) {
+      filterTitle.value = DateFormat('d/M/y').format(pickedDate).toString();
+      filterExpensesByDate(pickedDate);
+    }
+  }
+
+  filterExpensesByDate(DateTime selectedDate) {
+    print(expenseListMain);
+    print(expenseList);
+    expenseList.value =
+        expenseListMain.where((p0) => p0.date == selectedDate).toList();
+  }
+
+  resetFilter() {
+    filterTitle.value = "All";
+    expenseList.value = List.from(expenseListMain);
+  }
+
+  deleteExpense(String expenseId) async {
+    expenseListMain.value =
+        await ExpenseRepository().removeTransaction(expenseId: expenseId);
+    resetFilter();
+    Get.back();
+    initCategoryLists();
+  }
+
   @override
   Future<void> onInit() async {
     super.onInit();
     isLoading.value = true;
-    expenseList.value = await ExpenseRepository().loadTransactions();
+    expenseListMain.value = await ExpenseRepository().loadTransactions();
+    expenseList.value = List.from(expenseListMain);
     isLoading.value = false;
     if (expenseList.isNotEmpty) {
       initCategoryLists();

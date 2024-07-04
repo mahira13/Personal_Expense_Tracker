@@ -3,10 +3,8 @@ import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:get/get.dart';
 import 'package:personal_expense_tracker/controllers/home_screen_controller.dart';
 import 'package:personal_expense_tracker/routes/app_routes.dart';
-import 'package:personal_expense_tracker/services/database_service.dart';
 
 import 'package:personal_expense_tracker/utils/app_strings.dart';
-import 'package:personal_expense_tracker/views/add_expense_screen.dart';
 import 'package:personal_expense_tracker/views/home/widgets/expense_chart.dart';
 import 'package:personal_expense_tracker/views/home/widgets/expense_listtile.dart';
 
@@ -36,7 +34,7 @@ class HomeScreen extends GetView<HomeScreenController> {
       body: Stack(
         children: [
           ExpenseChart(), // categorywise expenses chart weekly
-          bottomDetailsSheet(),  //list of all expenses sorted
+          bottomDetailsSheet(), //list of all expenses sorted
         ],
       ),
       floatingActionButton: FloatingActionButton(
@@ -60,7 +58,7 @@ class HomeScreen extends GetView<HomeScreenController> {
       return gradientContainer(Obx(
         () => controller.isLoading.value
             ? loading()
-            : controller.expenseList.isEmpty
+            : controller.expenseList.isEmpty && controller.filterTitle.value=="All"
                 ? Center(child: Text(noExpenses))
                 : CustomScrollView(
                     controller: scrollController,
@@ -79,6 +77,62 @@ class HomeScreen extends GetView<HomeScreenController> {
                           ),
                         ),
                       ),
+                      Obx(() => SliverAppBar(
+                            backgroundColor: Colors.transparent,
+                            title: Text(
+                              controller.filterTitle.value,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .headlineMedium
+                                  ?.copyWith(fontWeight: FontWeight.w600),
+                            ),
+                            primary: false,
+                            pinned: true,
+                            centerTitle: false,
+                            actions: [
+                             PopupMenuButton(
+                                shape: const RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(12.0),
+                                  ),
+                                ),
+                                position: PopupMenuPosition.under,
+                                icon: Icon(
+                                  Icons.tune,
+                                  color: iconColorWhite,
+                                ),
+                                color: scaffoldBackgroundColor,
+                                onSelected: (value) {
+                                  if (value == 0) {
+                                    controller.resetFilter();
+                                  }
+                                  if (value == 1) {
+                                    controller.selectDate(context);
+                                  }
+                                },
+                                itemBuilder: (BuildContext bc) {
+                                  return  [
+                                    PopupMenuItem(
+                                         value: 0,
+                                      child: Text(
+                                        "All",
+                                        style: TextStyle(color:controller.filterTitle.value=="All"? primaryColor:bodyTextColor),
+                                      ),
+                                   
+                                    ),
+                                    PopupMenuItem(
+                                       value: 1,
+                                      child: Text(
+                                        "Filter by date",
+                                        style: TextStyle(color:controller.filterTitle.value!="All"? primaryColor:bodyTextColor),
+                                      ),
+                                     
+                                    ),
+                                  ];
+                                },
+                              )
+                            ],
+                          )),
                       SliverList(
                         delegate: SliverChildBuilderDelegate(
                           (context, index) {
@@ -106,17 +160,12 @@ class HomeScreen extends GetView<HomeScreenController> {
                                             context: context,
                                             builder: (BuildContext context) {
                                               return showDeleteAlert(deleteText,
-                                                  onPressed: (() async {
-                                                controller.expenseList.value =
-                                                    await ExpenseRepository()
-                                                        .removeTransaction(
-                                                            expenseId: controller
-                                                                    .expenseList[
-                                                                        index]
-                                                                    .id ??
-                                                                "");
-                                                Navigator.pop(context);
-                                                controller.initCategoryLists();
+                                                  onPressed: (() {
+                                                controller.deleteExpense(
+                                                  controller.expenseList[index]
+                                                          .id ??
+                                                      "",
+                                                );
                                               }));
                                             },
                                           );

@@ -74,7 +74,8 @@ class EditExpenseController extends GetxController {
 
   Future<void> _editTransaction(
       String title, double amount, DateTime chosenDate) async {
-    final newTxn = Expense(id:expenseItem?.id??"" ,
+    final newTxn = Expense(
+      id: expenseItem?.id ?? "",
       amount: amount,
       title: title,
       category: selectedCategory.value == "food"
@@ -85,8 +86,10 @@ class EditExpenseController extends GetxController {
       date: chosenDate,
     );
     HomeScreenController homeController = Get.find();
-    homeController.expenseList.value =
+    homeController.expenseListMain.value =
         await ExpenseRepository().updateTransaction(transaction: newTxn);
+
+    homeController.resetFilter();
     homeController.initCategoryLists();
   }
 

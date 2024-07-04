@@ -71,7 +71,8 @@ class AddNewExpenseController extends GetxController {
 
   Future<void> _addNewTransaction(
       String title, double amount, DateTime chosenDate) async {
-    final newTxn = Expense(id: uuid.v4(),
+    final newTxn = Expense(
+      id: uuid.v4(),
       amount: amount,
       title: title,
       category: selectedCategory.value == "food"
@@ -82,8 +83,9 @@ class AddNewExpenseController extends GetxController {
       date: chosenDate,
     );
     HomeScreenController homeController = Get.find();
-    homeController.expenseList.value =
+    homeController.expenseListMain.value =
         await ExpenseRepository().addTransaction(addT: newTxn);
+    homeController.resetFilter();
     homeController.initCategoryLists();
   }
 }

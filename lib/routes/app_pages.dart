@@ -2,13 +2,19 @@ import 'package:get/get.dart';
 import 'package:personal_expense_tracker/views/add_expense_screen.dart';
 import 'package:personal_expense_tracker/views/edit_expense_screen.dart';
 import 'package:personal_expense_tracker/views/home/home_screen.dart';
+import 'package:personal_expense_tracker/views/splash/splash_screen.dart';
 
 import 'app_routes.dart';
 
 class AppPages {
   static var routes = [
-    GetPage(
+     GetPage(
       name: AppRoutes.INITIAL,
+      page: () => SplashScreen(),
+      //binding: SplashBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.HOME,
       page: () => HomeScreen(),
       //binding: SplashBinding(),
     ),
