@@ -5,11 +5,12 @@ Easy to use and Simple Interface.
 1. Add an expense
 2. Intutive sliding functionality like whatsapp to delete and edit an expense
 3. Weekly expense to track the expensed on 3 categories: food, travel and miscellaneous
-4. Draggable scrollable sheet to view the whole expenses list
-5. Reminder at 6:30 pm to fill your daily expenses
+4. Filter expenses list based on selected date
+5. Draggable scrollable sheet to view the whole expenses list
+6. Reminder at 6:30 pm to fill your daily expenses
    
 ## Libraries & Tools used
-* Architecture used: MVC pattern
+* Architecture used: Clean architecture
 * State Management: GetX
 * Database : Sqflite
 1. flutter_svg: ^2.0.10+1
