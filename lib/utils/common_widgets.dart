@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:personal_expense_tracker/utils/app_colors.dart';
-import 'package:personal_expense_tracker/utils/app_strings.dart';
+import 'package:personal_expense_tracker/utils/constants/app_colors.dart';
+import 'package:personal_expense_tracker/utils/constants/app_strings.dart';
 
 Widget loading({String? content}) {
   return Center(
