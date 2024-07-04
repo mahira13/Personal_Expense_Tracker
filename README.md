@@ -41,5 +41,7 @@ Clone the repo and just do "flutter run"
 ![Screenshot_1719869529](https://github.com/mahira13/Personal_Expense_Tracker/assets/73304467/72b0c6bd-16e5-460d-8b7c-d5b9cbb49f35)
 
 
+![Screenshot_1720104038](https://github.com/mahira13/Personal_Expense_Tracker/assets/73304467/87e0b0b2-2bc7-4102-b181-fab3495d30be)
+
 
 
